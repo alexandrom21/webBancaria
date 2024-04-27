@@ -1,0 +1,29 @@
+@page
+@model webbancaria.Models.CuentasBancarias
+
+<h2>Cuentas bancarias</h2>
+
+@using (Html.BeginForm("EnviarMensaje", "Contacto", FormMethod.Post))
+{
+<form>
+  <div class="form-group">
+    <label for="numeroCuenta">Número de Cuenta</label>
+    <input type="text" class="form-control" id="numeroCuenta" name="numeroCuenta" required>
+  </div>
+  <div class="form-group">
+    <label for="tipoCuenta">Tipo de Cuenta</label>
+    <select class="form-control" id="tipoCuenta" name="tipoCuenta" required>
+      <option value="">Seleccione un tipo de cuenta</option>
+      <option value="Cuenta Corriente">Cuenta Corriente</option>
+      <option value="Cuenta de Ahorros">Cuenta de Ahorros</option>
+      <!-- Agrega más opciones según tus necesidades -->
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="saldo">Saldo Inicial</label>
+    <input type="number" class="form-control" id="saldo" name="saldo" step="0.01" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Registrar Cuenta</button>
+</form>
+}
+ <h1>@ViewData["Message"]</h1>
